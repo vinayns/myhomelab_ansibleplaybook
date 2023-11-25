@@ -1,0 +1,41 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Update Apt
+    apt:
+      update_cache: true
+
+  - name: Upgrade Apt
+    apt:
+      upgrade: true
+
+  - name: Clean Apt
+    apt:
+      clean: true
+
+  - name: AutoClean Apt
+    apt:
+      autoclean: true
+
+  - name: AutoRemove Apt
+    apt:
+      autoremove: true
+
+  - name: Reboot system
+    ansible.builtin.reboot:
+      post_reboot_delay: 30
+
+  - name: Check Uptime after Reboot
+    command: uptime
+    register: Uptime
+  - debug: var=Uptime.stdout_lines
+
+  - name: Install pre-Deployment dependencies
+    apt:
+      name:
+        - uidmap
+        - xrdp
+      update_cache: yes
