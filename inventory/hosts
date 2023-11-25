@@ -1,0 +1,13 @@
+[host]
+laptop
+# Change name to that of host
+
+[servers]
+server1 ansible_user=user1
+server2 ansible_user=user2
+# change names of servers and its respective users
+  
+[servers:vars]
+ansible_connection=ssh
+# ansible_ssh_private_key=~/.ssh/ansible
+# if SSH is using keys
