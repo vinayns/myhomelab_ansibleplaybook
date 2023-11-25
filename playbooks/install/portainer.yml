@@ -11,6 +11,7 @@
       docker_container:
         name: portainer
         image: portainer/portainer-ce
+        command: -H tcp://tasks.agent:9001 --tlsskipverify --no-auth --no-analytics
         state: started
         recreate: yes
         restart_policy: always
