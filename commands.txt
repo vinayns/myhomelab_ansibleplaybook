@@ -4,5 +4,8 @@ git clone https://github.com/vinayns/myhomelab_ansibleplaybook
 # install ansible 
 sudo curl -fsSL https://raw.githubusercontent.com/vinayns/myhomelab_ansibleplaybook/main/installAnsible.sh | sh
 
+chmod +x installAnsible.sh
+./installAnsible.sh
+
 # run scratch_custom playbook
 ansible-playbook -i playbooks/fromScratch_custom.yml
