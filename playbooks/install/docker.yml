@@ -1,0 +1,25 @@
+---
+
+- hosts: all
+  tasks:
+    - name: Download docker install script
+      ansible.builtin.get_url:
+        url: https://get.docker.com
+        dest: /tmp/docker-install.sh
+        mode: 0755
+
+    - name: Run install script
+      ansible.builtin.shell:
+        cmd: /tmp/docker-install.sh >> /tmp/dkrin.txt
+
+    - name: Remove temporary file
+      ansible.builtin.file:
+        path: /tmp/docker-install.sh
+        state: absent
+
+    - name: Set Docker to auto-start
+      ansible.builtin.service: name=docker enabled=true state=started
+
+    - name: Install Docker Rootless
+      ansible.builtin.shell:
+        cmd: dockerd-rootless-setuptool.sh install >> /tmp/dkrrtl.txt
