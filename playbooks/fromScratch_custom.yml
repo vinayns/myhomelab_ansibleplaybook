@@ -1,0 +1,13 @@
+---
+
+- name: Run 'update_upgrade' Playbook
+  ansible.builtin.import_playbook: update/update_upgrade.yml
+
+- name: Run 'docker' Playbook
+  ansible.builtin.import_playbook: install/docker.yml
+
+- name: Run 'reboot' Playbook
+  ansible.builtin.import_playbook: maintain/reboot.yml
+
+- name: Run 'portainer' Playbook
+  ansible.builtin.import_playbook: install/portainer.yml
