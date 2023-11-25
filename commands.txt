@@ -1,5 +1,5 @@
 # download the repo for setup
-gh repo clone vinayns/myhomelab_ansibleplaybook
+git clone https://github.com/vinayns/myhomelab_ansibleplaybook
 
 # install ansible 
 sudo curl -fsSL https://raw.githubusercontent.com/vinayns/myhomelab_ansibleplaybook/main/installAnsible.sh | sh
