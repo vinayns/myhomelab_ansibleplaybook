@@ -1,0 +1,20 @@
+---
+version: "2.1"
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    network_mode: bridge
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - sonarr:/config
+      - /home/sauron/Media/TV_Shows/:/tv #optional
+      - /home/sauron/Media/Downloads/:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+volumes:
+  sonarr:
