@@ -2,7 +2,7 @@
 version: "2.1"
 services:
   prowlarr:
-    image: lscr.io/linuxserver/prowlarr:1.5.2.3484-ls21 #latest
+    image: lscr.io/linuxserver/prowlarr:1.5.2.3484-ls19 #latest
     container_name: prowlarr
     network_mode: bridge
     environment:
