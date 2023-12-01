@@ -2,7 +2,7 @@
 version: "2.1"
 services:
   jackett:
-    image: lscr.io/linuxserver/jackett:latest
+    image: lscr.io/linuxserver/jackett:v0.21.356-ls112 #latest
     container_name: jackett
     network_mode: bridge
     environment:
